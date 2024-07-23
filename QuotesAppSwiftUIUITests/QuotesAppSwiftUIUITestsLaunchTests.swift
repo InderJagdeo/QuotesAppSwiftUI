@@ -2,7 +2,7 @@
 //  QuotesAppSwiftUIUITestsLaunchTests.swift
 //  QuotesAppSwiftUIUITests
 //
-//  Created by SDNA Tech on 21/07/24.
+//  Created by Inder Jagdo on 21/07/24.
 //
 
 import XCTest
