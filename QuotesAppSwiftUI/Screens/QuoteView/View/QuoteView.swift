@@ -37,8 +37,8 @@ private extension QuoteView {
             }
         case .noData:
             ContentUnavailableView(
-                "All rockets are on a mission in outer space 🚀",
-                systemImage: "sparkles",
+                "No Data Available",
+                systemImage: "quote.bubble",
                 description: Text("Please try it later")
             )
         case .error(let error):

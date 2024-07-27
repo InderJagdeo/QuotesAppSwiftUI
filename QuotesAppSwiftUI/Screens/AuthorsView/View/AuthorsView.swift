@@ -40,8 +40,8 @@ private extension AuthorsView {
             ListView(authors: authors, selectedAuthor: $selectedAuthor)
         case .noData:
             ContentUnavailableView(
-                "All rockets are on a mission in outer space 🚀",
-                systemImage: "sparkles",
+                "No Data Available",
+                systemImage: "list.bullet.rectangle",
                 description: Text("Please try it later")
             )
         case .error(let error):

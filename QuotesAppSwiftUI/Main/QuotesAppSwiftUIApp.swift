@@ -11,10 +11,6 @@ import SwiftData
 @main
 struct QuotesAppSwiftUIApp: App {
     
-    init() {
-        NetworkMonitor.shared.startMonitoring()
-    }
-    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)

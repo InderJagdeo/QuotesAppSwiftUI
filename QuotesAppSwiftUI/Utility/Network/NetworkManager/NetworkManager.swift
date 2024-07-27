@@ -34,7 +34,7 @@ public final class NetworkManager: NetworkManagerProtocol {
                 return promise(.failure(RequestError.unknown()))
             }
  
-            guard NetworkMonitor.shared.isReachable else {
+            guard NetworkMonitor.shared.isConnectd else {
                 return promise(.failure(NetworkError.unreachable()))
             }
 
@@ -63,4 +63,3 @@ public final class NetworkManager: NetworkManagerProtocol {
         }
     }
 }
-

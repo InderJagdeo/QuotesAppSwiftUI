@@ -17,6 +17,7 @@ struct MainView: View {
                     .transition(.opacity)
             } else {
                 MainTabView()
+                    .networkStatusBar()
             }
         }
         .onAppear {
@@ -24,6 +25,7 @@ struct MainView: View {
                 try await Task.sleep(nanoseconds: 4_000_000_000) // Delay for 4 seconds
                 showSplashScreen.toggle()
             }
+            NetworkMonitor.shared.startMonitoring()
         }
     }
 }
