@@ -25,6 +25,7 @@ struct QuotesAppSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
             MainView()
+                .networkStatusBar()
         }
         .modelContainer(sharedModelContainer)
     }

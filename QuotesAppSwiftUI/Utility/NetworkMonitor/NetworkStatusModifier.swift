@@ -19,9 +19,12 @@ struct NetworkStatusModifier: ViewModifier {
             content
             networkContent
         }
+        .onAppear() {
+            self.isShowStatusBar = false
+        }
         .onReceive(networkMonitor.$isConnectd) { _ in
             withAnimation {
-                self.isShowStatusBar = true
+                self.isShowStatusBar = NetworkMonitor.shared.status != .requiresConnection
             }
         }
     }

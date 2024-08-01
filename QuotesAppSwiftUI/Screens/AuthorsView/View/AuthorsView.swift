@@ -38,6 +38,9 @@ private extension AuthorsView {
             ProgressView()
         case .loaded(let authors):
             ListView(authors: authors, selectedAuthor: $selectedAuthor)
+                .listRowSpacing(16.0)
+                .scrollIndicators(.hidden)
+                .listStyle(PlainListStyle())
         case .noData:
             ContentUnavailableView(
                 "No Data Available",
@@ -54,26 +57,42 @@ private extension AuthorsView {
     }
 }
 
-extension AuthorsView {
+private extension AuthorsView {
     struct ListView: View {
         var authors: [Authors]
         @Binding var selectedAuthor: Authors?
         
         var body: some View {
             List(authors) { author in
-                VStack(alignment: .leading) {
-                    Text("\"\(author.name)\"")
-                        .font(.body)
-                        .padding(.bottom, 2)
-                    Text("- \(author.description)")
-                        .font(.caption)
-                        .foregroundColor(.gray)
-                }
-                .onTapGesture {
-                    selectedAuthor = author
-                    print(author)
-                }
+                AuthorItemView(author: author)
+                    .padding(.horizontal, 16.0)
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets())
+                    .onTapGesture {
+                        selectedAuthor = author
+                        print(author)
+                    }
             }
+        }
+    }
+}
+
+private extension AuthorsView {
+    struct AuthorItemView: View {
+        var author: Authors
+        var body: some View {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("\"\(author.name)\"")
+                    .font(.body)
+                Text("- \(author.description)")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .trailing)
+            }
+            .padding()
+            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+            .background(Color("mercury"))
+            .clipShape(RoundedRectangle(cornerRadius: 16.0))
         }
     }
 }

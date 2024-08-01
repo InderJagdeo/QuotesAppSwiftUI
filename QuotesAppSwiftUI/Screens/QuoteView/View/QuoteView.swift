@@ -14,9 +14,10 @@ struct QuoteView: View {
     
     var body: some View {
         content
-        .task {
-            viewModel.transform(input: .load)
-        }
+            .padding()
+            .task { 
+                viewModel.transform(input: .load)
+            }
     }
 }
 
@@ -26,14 +27,9 @@ private extension QuoteView {
         switch viewModel.state {
         case .notLoaded, .loading:
             ProgressView()
-        case .loaded(let quote):
-            VStack {
-                Text(quote?.content ?? "")
-                    .font(.largeTitle)
-                    .padding() 
-                Text(quote?.author ?? "")
-                    .font(.title2)
-                    .padding()
+        case .loaded(let randomQuote):
+            if let quote = randomQuote {
+                QuoteContentView(quote: quote)
             }
         case .noData:
             ContentUnavailableView(
@@ -47,6 +43,24 @@ private extension QuoteView {
                 systemImage: "exclamationmark.triangle",
                 description: Text("Error: \(error.localizedDescription)")
             )
+        }
+    }
+}
+
+private extension QuoteView {
+    struct QuoteContentView: View {
+        var quote: Quote
+        var body: some View {
+            VStack(spacing: 16.0) {
+                Text(quote.content)
+                    .font(.title)
+                Text("- \(quote.author)")
+                    .font(.title2)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+            }
+            .padding()
+            .background(Color("mercury"))
+            .clipShape(RoundedRectangle(cornerRadius: 16.0))
         }
     }
 }

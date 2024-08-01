@@ -34,7 +34,10 @@ class QuoteViewModel: ObservableObject {
     init(quote: Quote? = nil, networkManager: NetworkManagerProtocol = NetworkManager()) {
         self.quote = quote
         self.networkManager = networkManager
-        self.state = .loaded(quotes: quote)
+        
+//        if (quote != nil) {
+//            self.state = .loaded(quotes: quote)
+//        } 
     }
     
     // MARK: - User Defined Methods

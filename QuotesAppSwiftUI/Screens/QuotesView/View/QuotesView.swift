@@ -27,7 +27,6 @@ struct QuotesView: View {
                 }
         }
     }
-    
 }
 
 private extension QuotesView {
@@ -38,6 +37,9 @@ private extension QuotesView {
             ProgressView()
         case .loaded(let quotes):
             ListView(quotes: quotes, selectedQuote: $selectedQuote)
+                .listRowSpacing(16.0)
+                .scrollIndicators(.hidden)
+                .listStyle(PlainListStyle())
         case .noData:
             ContentUnavailableView(
                 "No Data Available",
@@ -54,26 +56,42 @@ private extension QuotesView {
     }
 }
 
-extension QuotesView {
+private extension QuotesView {
     struct ListView: View {
         var quotes: [Quote]
         @Binding var selectedQuote: Quote?
         
         var body: some View {
             List(quotes) { quote in
-                VStack(alignment: .leading) {
-                    Text("\"\(quote.content)\"")
-                        .font(.body)
-                        .padding(.bottom, 2)
-                    Text("- \(quote.author)")
-                        .font(.caption)
-                        .foregroundColor(.gray)
-                }
-                .onTapGesture {
-                    selectedQuote = quote
-                    print("Quote: ", quote);
-                }
+                QuoteItemView(quote: quote)
+                    .padding(.horizontal, 16.0)
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets())
+                    .onTapGesture {
+                        selectedQuote = quote
+                        print("Quote: ", quote);
+                    }
             }
+        }
+    }
+}
+
+private extension QuotesView {
+    struct QuoteItemView: View {
+        var quote: Quote
+        var body: some View {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("\"\(quote.content)\"")
+                    .font(.body)
+                Text("- \(quote.author)")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .trailing)
+            }
+            .padding()
+            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+            .background(Color("mercury"))
+            .clipShape(RoundedRectangle(cornerRadius: 16.0))
         }
     }
 }

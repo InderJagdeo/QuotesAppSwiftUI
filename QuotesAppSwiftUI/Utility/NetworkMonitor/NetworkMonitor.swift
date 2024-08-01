@@ -18,7 +18,7 @@ final class NetworkMonitor: ObservableObject {
     private(set) var isCellular: Bool = true
     private(set) var status = NWPath.Status.requiresConnection
     
-    @Published private(set) var isConnectd: Bool = true
+    @Published private(set) var isConnectd: Bool = false
     
     private let queue = DispatchQueue(label: "NetworkMonitor")
     
