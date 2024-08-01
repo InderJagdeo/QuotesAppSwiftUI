@@ -35,15 +35,18 @@ class QuoteViewModel: ObservableObject {
         self.quote = quote
         self.networkManager = networkManager
         
-//        if (quote != nil) {
-//            self.state = .loaded(quotes: quote)
-//        } 
+        if (quote != nil) {
+            self.state = .loaded(quotes: quote)
+        } 
     }
     
     // MARK: - User Defined Methods
     internal func transform(input: Input) {
         switch input {
-        case .load, .refresh:
+        case .load:
+            guard quote == nil else { return }
+            self.requestRandomQuote()
+        case .refresh:
             self.requestRandomQuote()
         }
     }
