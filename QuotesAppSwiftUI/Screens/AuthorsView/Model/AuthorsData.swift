@@ -11,11 +11,11 @@ import Foundation
 struct AuthorsData: Codable {
     let count, totalCount, page, totalPages: Int
     let lastItemIndex: Int
-    let results: [Authors]
+    let results: [Author]
 }
 
 // MARK: - Result
-struct Authors: Codable, Identifiable, Hashable {
+struct Author: Codable, Identifiable, Hashable {
     let id, name, bio, description: String
     let link: String
     let quoteCount: Int

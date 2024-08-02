@@ -63,7 +63,7 @@ private extension QuotesView {
         
         var body: some View {
             List(quotes) { quote in
-                QuoteItemView(quote: quote)
+                QuoteCellView(quote: quote)
                     .padding(.horizontal, 16.0)
                     .listRowSeparator(.hidden)
                     .listRowInsets(EdgeInsets())
@@ -77,7 +77,7 @@ private extension QuotesView {
 }
 
 private extension QuotesView {
-    struct QuoteItemView: View {
+    struct QuoteCellView: View {
         var quote: Quote
         var body: some View {
             VStack(alignment: .leading, spacing: 8) {
@@ -95,7 +95,6 @@ private extension QuotesView {
         }
     }
 }
-
 
 #Preview {
     QuotesView()

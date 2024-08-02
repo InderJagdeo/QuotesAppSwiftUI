@@ -27,7 +27,7 @@ class AuthorsViewModel: ObservableObject {
         case loading
         case noData // Indicates successful fetch but no data
         case error(error: Error) // You might want to pass an error message
-        case loaded(quotes: [Authors]) // You might want to pass the fetched data
+        case loaded(quotes: [Author]) // You might want to pass the fetched data
     }
     
     // MARK: - Initializer
@@ -45,8 +45,6 @@ class AuthorsViewModel: ObservableObject {
     
     // MARK: - Web Requests
     private func requestAuthorsList() {
-        self.state = .loading
-        
         let request = AuthorsRequest()
         
         let valueHandler: (AuthorsData) -> Void = { [weak self] authors in

@@ -14,8 +14,7 @@ struct QuoteView: View {
     
     var body: some View {
         content
-            .padding()
-            .task { 
+            .task {
                 viewModel.transform(input: .load)
             }
     }
@@ -30,6 +29,7 @@ private extension QuoteView {
         case .loaded(let randomQuote):
             if let quote = randomQuote {
                 QuoteContentView(quote: quote)
+                    .padding()
             }
         case .noData:
             ContentUnavailableView(

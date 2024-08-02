@@ -11,7 +11,7 @@ import Combine
 struct AuthorsView: View {
     
     @StateObject private var viewModel = AuthorsViewModel()
-    @State private var selectedAuthor: Authors?
+    @State private var selectedAuthor: Author?
     
     var body: some View {
         NavigationStack {
@@ -59,12 +59,12 @@ private extension AuthorsView {
 
 private extension AuthorsView {
     struct ListView: View {
-        var authors: [Authors]
-        @Binding var selectedAuthor: Authors?
+        var authors: [Author]
+        @Binding var selectedAuthor: Author?
         
         var body: some View {
             List(authors) { author in
-                AuthorItemView(author: author)
+                AuthorCellView(author: author)
                     .padding(.horizontal, 16.0)
                     .listRowSeparator(.hidden)
                     .listRowInsets(EdgeInsets())
@@ -75,11 +75,9 @@ private extension AuthorsView {
             }
         }
     }
-}
-
-private extension AuthorsView {
-    struct AuthorItemView: View {
-        var author: Authors
+    
+    struct AuthorCellView: View {
+        var author: Author
         var body: some View {
             VStack(alignment: .leading, spacing: 8) {
                 Text("\"\(author.name)\"")
@@ -95,6 +93,7 @@ private extension AuthorsView {
             .clipShape(RoundedRectangle(cornerRadius: 16.0))
         }
     }
+
 }
 
 #Preview {
