@@ -27,7 +27,7 @@ extension AuthorDetailView {
     @ViewBuilder
     var content: some View {
         switch viewModel.state {
-        case .notLoaded, .loading:
+        case .notLoaded:
             ProgressView()
         case .loaded(let author):
             VStack {

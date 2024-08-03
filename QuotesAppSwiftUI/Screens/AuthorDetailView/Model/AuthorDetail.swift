@@ -8,6 +8,7 @@
 import Foundation
 
 struct AuthorDetail: Codable {
+    
     let id, name: String
     let link: String
     let bio, description: String

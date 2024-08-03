@@ -9,6 +9,7 @@ import SwiftUI
 import Combine
 
 struct QuotesView: View {
+    
     @StateObject private var viewModel = QuotesViewModel()
     @State private var selectedQuote: Quote?
     
@@ -33,7 +34,7 @@ private extension QuotesView {
     @ViewBuilder
     var content: some View {
         switch viewModel.state {
-        case .notLoaded, .loading:
+        case .notLoaded:
             ProgressView()
         case .loaded(let quotes):
             ListView(quotes: quotes, selectedQuote: $selectedQuote)

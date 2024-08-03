@@ -9,6 +9,7 @@ import Foundation
 import Combine
 
 class QuoteViewModel: ObservableObject {
+    
     // MARK: - Properties
     @Published private(set) var quote: Quote?
     @Published private(set) var state: Output = .notLoaded
@@ -23,8 +24,7 @@ class QuoteViewModel: ObservableObject {
     }
     
     enum Output {
-        case notLoaded
-        case loading
+        case notLoaded 
         case noData // Indicates successful fetch but no data
         case error(error: Error) // You might want to pass an error message
         case loaded(quotes: Quote?) // You might want to pass the fetched data

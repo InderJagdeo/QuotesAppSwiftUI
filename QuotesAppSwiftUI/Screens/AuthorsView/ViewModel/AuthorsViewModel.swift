@@ -9,6 +9,7 @@ import Foundation
 import Combine
 
 class AuthorsViewModel: ObservableObject {
+    
     // MARK: - Properties
     @Published private(set) var authors: AuthorsData?
     @Published private(set) var state: Output = .notLoaded
@@ -24,7 +25,6 @@ class AuthorsViewModel: ObservableObject {
     
     enum Output {
         case notLoaded
-        case loading
         case noData // Indicates successful fetch but no data
         case error(error: Error) // You might want to pass an error message
         case loaded(quotes: [Author]) // You might want to pass the fetched data

@@ -2,7 +2,7 @@
 //  AuthorDetailRequest.swift
 //  QuotesAppSwiftUI
 //
-//  Created by SDNA Tech on 23/07/24.
+//  Created by Inder Jagdeo on 23/07/24.
 //
 
 import Foundation

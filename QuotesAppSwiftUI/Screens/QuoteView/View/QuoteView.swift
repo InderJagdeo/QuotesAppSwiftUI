@@ -9,6 +9,7 @@ import SwiftUI
 import Combine
 
 struct QuoteView: View {
+    
     @StateObject var viewModel: QuoteViewModel
     @State private var subscriptions = Set<AnyCancellable>()
     
@@ -24,7 +25,7 @@ private extension QuoteView {
     @ViewBuilder
     var content: some View {
         switch viewModel.state {
-        case .notLoaded, .loading:
+        case .notLoaded:
             ProgressView()
         case .loaded(let randomQuote):
             if let quote = randomQuote {

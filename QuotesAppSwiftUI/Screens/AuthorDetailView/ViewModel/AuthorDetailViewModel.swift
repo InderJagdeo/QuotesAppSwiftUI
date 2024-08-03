@@ -9,8 +9,8 @@ import Foundation
 import Combine
 
 class AuthorDetailViewModel: ObservableObject {
-    // MARK: - Properties
     
+    // MARK: - Properties
     @Published private(set) var author: AuthorDetail?
     @Published private(set) var state: Output = .notLoaded
     
@@ -24,7 +24,6 @@ class AuthorDetailViewModel: ObservableObject {
     
     enum Output {
         case notLoaded
-        case loading
         case noData
         case error(Error)
         case loaded(AuthorDetail?)
@@ -47,8 +46,6 @@ class AuthorDetailViewModel: ObservableObject {
     // MARK: - Web Requests
     private func requestAuthorDetail(authorId: String) {
         let request = AuthorDetailRequest(id: authorId)
-        
-        self.state = .loading
         
         let valueHandler: (AuthorDetail) -> Void = { [weak self] author in
             self?.author = author

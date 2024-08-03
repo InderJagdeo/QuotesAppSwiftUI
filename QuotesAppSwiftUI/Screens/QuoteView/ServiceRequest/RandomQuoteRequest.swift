@@ -8,6 +8,7 @@
 import Foundation
 
 struct RandomQuoteRequest: Router {
+    
     typealias Response = Quote
     var method: HTTPMethod = .get
     var parameters: RequestParameters?

@@ -8,6 +8,7 @@
 import Foundation
 
 struct QuotesData: Codable {
+    
     let count, totalCount, page, totalPages: Int
     let lastItemIndex: Int
     let results: [Quote]

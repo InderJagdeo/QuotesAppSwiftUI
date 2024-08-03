@@ -8,6 +8,7 @@
 import Foundation
 
 struct QuotesRequest: Router {
+    
     typealias Response = QuotesData
     var method: HTTPMethod = .get
     var parameters: RequestParameters?

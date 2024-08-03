@@ -8,6 +8,7 @@
 import Foundation
 
 struct Quote: Identifiable, Codable, Hashable {
+    
     let id, content, author, dateAdded: String
     
     enum CodingKeys: String, CodingKey {

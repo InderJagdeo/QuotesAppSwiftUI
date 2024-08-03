@@ -7,8 +7,8 @@
 
 import Foundation
 
-
 struct AuthorsData: Codable {
+    
     let count, totalCount, page, totalPages: Int
     let lastItemIndex: Int
     let results: [Author]
@@ -16,6 +16,7 @@ struct AuthorsData: Codable {
 
 // MARK: - Result
 struct Author: Codable, Identifiable, Hashable {
+    
     let id, name, bio, description: String
     let link: String
     let quoteCount: Int

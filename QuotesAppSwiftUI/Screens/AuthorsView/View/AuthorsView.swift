@@ -34,7 +34,7 @@ private extension AuthorsView {
     @ViewBuilder
     var content: some View {
         switch viewModel.state {
-        case .notLoaded, .loading:
+        case .notLoaded:
             ProgressView()
         case .loaded(let authors):
             ListView(authors: authors, selectedAuthor: $selectedAuthor)
