@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct MainView: View {
-    @State private var showSplashScreen = true
+    @State private var isSplashScreenVisible = true
     
     var body: some View {
         Group {
-            if showSplashScreen {
+            if isSplashScreenVisible {
                 SplashView()
                     .transition(.opacity)
             } else {
@@ -23,7 +23,7 @@ struct MainView: View {
         .onAppear {
             Task {
                 try await Task.sleep(nanoseconds: 4_000_000_000) // Delay for 4 seconds
-                showSplashScreen.toggle()
+                isSplashScreenVisible.toggle()
             }
             NetworkMonitor.shared.startMonitoring()
         }

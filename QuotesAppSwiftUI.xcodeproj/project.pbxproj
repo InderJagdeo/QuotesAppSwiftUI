@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C78AC8AC2C5E2DD000E5C9D6 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AC8AB2C5E2DD000E5C9D6 /* ActivityViewController.swift */; };
 		C79969902C500FF40063ED36 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C799698C2C500FF40063ED36 /* Quote.swift */; };
 		C79969912C500FF40063ED36 /* AuthorsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C799698D2C500FF40063ED36 /* AuthorsData.swift */; };
 		C79969922C500FF40063ED36 /* QuotesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C799698E2C500FF40063ED36 /* QuotesData.swift */; };
@@ -72,6 +73,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C78AC8AB2C5E2DD000E5C9D6 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		C78AC8AD2C5E2F7500E5C9D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C799698C2C500FF40063ED36 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		C799698D2C500FF40063ED36 /* AuthorsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorsData.swift; sourceTree = "<group>"; };
 		C799698E2C500FF40063ED36 /* QuotesData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesData.swift; sourceTree = "<group>"; };
@@ -147,6 +150,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C78AC8AA2C5E2DAF00E5C9D6 /* ActivityController */ = {
+			isa = PBXGroup;
+			children = (
+				C78AC8AB2C5E2DD000E5C9D6 /* ActivityViewController.swift */,
+			);
+			path = ActivityController;
+			sourceTree = "<group>";
+		};
 		C794D9982C4D49CD00B629C4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +191,7 @@
 		C79969A42C5010160063ED36 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				C78AC8AA2C5E2DAF00E5C9D6 /* ActivityController */,
 				C79969A52C5010160063ED36 /* Network */,
 				C79969BA2C5010160063ED36 /* Permissions */,
 				C79969BC2C5010160063ED36 /* Extensions */,
@@ -503,6 +515,7 @@
 		C7B9E2E32C4D2C9A0085C3CA /* QuotesAppSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				C78AC8AD2C5E2F7500E5C9D6 /* Info.plist */,
 				C794D9992C4D49F400B629C4 /* Main */,
 				C794D99A2C4D4A1900B629C4 /* Screens */,
 				C79969A42C5010160063ED36 /* Utility */,
@@ -682,6 +695,7 @@
 				C79969CF2C5010160063ED36 /* Errors.swift in Sources */,
 				C79969982C5010020063ED36 /* QuotesRequest.swift in Sources */,
 				C79969902C500FF40063ED36 /* Quote.swift in Sources */,
+				C78AC8AC2C5E2DD000E5C9D6 /* ActivityViewController.swift in Sources */,
 				C79969922C500FF40063ED36 /* QuotesData.swift in Sources */,
 				C79969C22C5010160063ED36 /* Router+Request.swift in Sources */,
 				C79969D32C5010160063ED36 /* Data+Ext.swift in Sources */,
@@ -873,6 +887,9 @@
 				DEVELOPMENT_TEAM = M5M7Z3Y694;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuotesAppSwiftUI/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Quotes;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.magazines-and-newspapers";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -883,7 +900,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.inder.QuotesAppSwiftUI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inder.quotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -902,6 +919,9 @@
 				DEVELOPMENT_TEAM = M5M7Z3Y694;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuotesAppSwiftUI/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Quotes;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.magazines-and-newspapers";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -912,7 +932,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.inder.QuotesAppSwiftUI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inder.quotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

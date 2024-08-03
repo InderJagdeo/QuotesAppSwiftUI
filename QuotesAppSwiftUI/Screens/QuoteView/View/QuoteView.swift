@@ -11,13 +11,38 @@ import Combine
 struct QuoteView: View {
     
     @StateObject var viewModel: QuoteViewModel
+    @State private var isShareSheetPresented = false
     @State private var subscriptions = Set<AnyCancellable>()
     
     var body: some View {
-        content
-            .task {
-                viewModel.transform(input: .load)
-            }
+        NavigationStack {
+            content
+                .task {
+                    viewModel.transform(input: .load)
+                }
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button(action: {
+                            viewModel.transform(input: .refresh)
+                        }, label: {
+                            Image(systemName: "arrow.clockwise")
+                                .foregroundColor(.primary)
+                        })
+                    }
+                    
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button(action: {
+                            isShareSheetPresented = true
+                        }, label: {
+                            Image(systemName: "square.and.arrow.up")
+                                .foregroundColor(.primary)
+                        })
+                    }
+                }
+                .sheet(isPresented: $isShareSheetPresented, content: {
+                    ActivityViewController(activityItems: [viewModel.quote?.content ?? ""])
+                })
+        }
     }
 }
 
