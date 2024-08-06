@@ -13,4 +13,8 @@ Welcome to **QuotesAppSwiftUI**! This project is a showcase of my learning journ
 - **Combine**: Utilizes the reactive programming framework to handle asynchronous events and data binding seamlessly.
 - **MVVM Architecture**: Implements the Model-View-ViewModel pattern for a clear separation of concerns, making the code more modular and maintainable.
 
+## App Preview
+
+![Mobile](./Screenshots/quotes.svg)
+
 Explore the source code to see how SwiftUI, Combine, and MVVM come together to create a smooth and responsive user experience. Feel free to fork the repository, open issues for any bugs or enhancements, and contribute to the project!

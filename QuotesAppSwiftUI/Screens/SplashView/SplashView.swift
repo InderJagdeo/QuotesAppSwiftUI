@@ -10,13 +10,13 @@ import SwiftUI
 struct SplashView: View {
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             Spacer()
-            Text("Quotes")
+            Text("Quotes.")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-            Text("Welcome to My App")
-                .font(.title2)
+            Text("Motivate Yourself With US!")
+                .font(.title3)
                 .fontWeight(.semibold)
             
             Spacer()
