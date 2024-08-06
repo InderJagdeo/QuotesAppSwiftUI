@@ -5,8 +5,8 @@ Welcome to **QuotesAppSwiftUI**! This project is a showcase of my learning journ
 
 ## Features
 - **Random Quote**: Get inspired with a randomly selected quote.
-- **Quote List & Quote Detail**: Browse through a comprehensive list of quotes and view detailed information for each one.
-- **Author List & Author Detail**: Explore a list of authors and dive into details about their lives and works.
+- **List of Quotes**: Browse through a comprehensive list of quotes and view detailed information for each one.
+- **List of Authors**: Explore a list of authors and dive into details about their lives and works.
 
 ## Technologies Used
 - **SwiftUI**: Leverages the latest UI framework from Apple to create a clean and intuitive user interface.
